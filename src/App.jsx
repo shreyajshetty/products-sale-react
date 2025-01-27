@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import { ChakraProvider, Box, Tabs, TabList, TabPanels, Tab, TabPanel, Button, useDisclosure } from '@chakra-ui/react';
-import ActiveOrders from './pages/ActiveOrders';
-import CompletedOrders from './pages/CompletedOrders';
-import Login from './pages/Login';
-import { useAuth } from './hooks/useAuth';
-import ThemeToggle from './components/ThemeToggle';
-import SaleOrderModal from './components/SaleOrderModal';
-import ErrorBoundary from './components/ErrorBoundary';
+import React, { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom"; // No need to import BrowserRouter again
+import {
+  ChakraProvider,
+  Box,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Button,
+  useDisclosure,
+} from "@chakra-ui/react";
+import ActiveOrders from "./pages/ActiveOrders";
+import CompletedOrders from "./pages/CompletedOrders";
+import Login from "./pages/Login";
+import { useAuth } from "./hooks/useAuth";
+import ThemeToggle from "./components/ThemeToggle";
+import SaleOrderModal from "./components/SaleOrderModal";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const App = () => {
   const { isAuthenticated } = useAuth();
@@ -37,8 +47,14 @@ const App = () => {
                     </TabList>
                     <TabPanels>
                       <TabPanel>
-                        <Button colorScheme="teal" onClick={onOpen}>+ Sale Order</Button>
-                        <SaleOrderModal isOpen={isOpen} onClose={onClose} onSubmit={handleSaleOrderSubmit} />
+                        <Button colorScheme="teal" onClick={onOpen}>
+                          + Sale Order
+                        </Button>
+                        <SaleOrderModal
+                          isOpen={isOpen}
+                          onClose={onClose}
+                          onSubmit={handleSaleOrderSubmit}
+                        />
                         <ErrorBoundary>
                           <ActiveOrders orders={orders} />
                         </ErrorBoundary>
