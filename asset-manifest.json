@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/products-sale-react/static/css/main.dc3d9745.css",
+    "main.js": "/products-sale-react/static/js/main.64074112.js",
+    "index.html": "/products-sale-react/index.html",
+    "main.dc3d9745.css.map": "/products-sale-react/static/css/main.dc3d9745.css.map",
+    "main.64074112.js.map": "/products-sale-react/static/js/main.64074112.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc3d9745.css",
+    "static/js/main.64074112.js"
+  ]
+}
